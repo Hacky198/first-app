@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+//  
 import './App.css';
+import Navigation from './navigation/navigation';
 
-function App() {
+// function data(user){
+//   return user.firstName + ' ' +user.lasrName;
+// }
+
+// const userData = {
+//   firstName:"test",
+//   lasrName:"react"
+// }
+// Render With Function
+function Showdata(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    
+      <Navigation />
+
+
+  )
+  
 }
 
-export default App;
+
+// Render With Class
+// without import Component
+// class Showdata extends React.Component{
+//   render(){
+//     return <h1>Hi App {data(userData)}</h1>;
+//   }
+// }
+
+// with import Component
+//class Showdata extends Component{
+// class Showdata extends Component{
+//   render(){
+//     return <h1>Hi App {data(userData)}</h1>;
+//   }
+// }
+// Render With Variable
+// const Showdata = (
+//      <h1>Hi App {data(userData)}</h1>
+// )
+
+//React credte Element
+// const element = React.createElement(
+//   'h1',
+//   {className: 'greeting asddgajdhsa',
+//     dataAttr:'asdab',
+//   },
+//   'Hello, world!'
+// );
+
+export default Showdata;

@@ -1,33 +1,219 @@
-.App {
-  text-align: center;
+
+
+/*============== Font Start ==============*/
+@font-face {
+    font-family: proxima-nova;
+    src: url(/static/fonts/proxima-nova/proximanovaRegular.eot?#iefix);
+    src: url(/static/fonts/proxima-nova/proximanovaRegular.eot?#iefix) format("embedded-opentype"), url(/static/fonts/proxima-nova/ProximaNovaRegular.woff2) format("woff2"), url(/static/fonts/proxima-nova/proximanovaRegular.woff) format("woff"),url(/static/fonts/proxima-nova/proximanovaRegular.ttf) format("truetype"),url(/static/fonts/proxima-nova/proximanovaRegular.svg#proxima_nova_alt_rgregular) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: proxima-novabold;
+    src: url(/static/fonts/proxima-novabold.eot?#iefix);
+    src: url(/static/fonts/proxima-novabold.eot?#iefix) format("embedded-opentype"), url(/static/fonts/proxima-novabold.woff2) format("woff2"),url(/static/fonts/proxima-novabold.woff) format("woff"),url(/static/fonts/proxima-novabold.ttf) format("truetype"), url(/static/fonts/proxima-novabold.svg#proxima-bold-webfont) format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display:swap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: proxima-novasemi;
+    src: url(/static/fonts/proxima-semibold-webfont.eot?#iefix);
+    src: url(/static/fonts/proxima-semibold-webfont.eot?#iefix) format("embedded-opentype"), url(/static/fonts/proxima-semibold-webfont.woff2) format("woff2"), url(/static/fonts/proxima-semibold-webfont.woff) format("woff"),url(/static/fonts/proxima-semibold-webfont.ttf) format("truetype"), url(/static/fonts/proxima-semibold-webfont.svg#proxima_nova_alt_rgregular) format("svg");
+    font-style: normal;
+    font-display:swap;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: proxima-novalight;
+    src: url(/static/fonts/proxima-thin-webfont.eot?#iefix);
+    src: url(/static/fonts/proxima-thin-webfont.eot?#iefix) format("embedded-opentype"), url(/static/fonts/proxima-thin-webfont.woff2) format("woff2"), url(/static/fonts/proxima-thin-webfont.woff) format("woff"), url(/static/fonts/proxima-thin-webfont.ttf) format("truetype"), url(/static/fonts/proxima-thin-webfont.svg#proxima-thin-webfont) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: socialIcon;
+    src: url(/static/fonts/socialicon/socicon-webfont.eot?#iefix);
+    src: url(/static/fonts/socialicon/socicon-webfont.eot?#iefix) format("embedded-opentype"), url(/static/fonts/socialicon/socicon-webfont.woff2) format("woff2"), url(/static/fonts/socialicon/socicon-webfont.woff) format("woff"), url(/static/fonts/socialicon/socicon-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: mosk;
+    src: url(/static/fonts/Mosk+Ultra-Bold+900.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
+}
+/*============== Font End ==============*/
+
+
+
+
+
+/*============== Reset Stylesheet Start ==============*/
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: proxima-nova,sans-serif;
+}
+body {
+    font-family: proxima-nova,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+:focus {
+    outline: 0;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+[hidden] {
+    display: none;
+}
+/*==============  Stylesheet End ==============*/
+
+
+/*============== common symentic element  Stylesheet Start ==============*/
+h1,h2,h3,h4,h6{
+    color:#293549;
+    line-height: 1.2;
+    margin:0;
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 21px;
+}
+p{
+    font-family: proxima-nova,sans-serif;
+    line-height: 1.2;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+p:last-child{
+    margin-bottom: 0;
+}
+.bold{
+    font-family: proxima-novabold,sans-serif;
+}
+a,a:hover,a:focus{
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+    max-width: 100%;
+}
+/*============== commen symentic element  Stylesheet End ==============*/
+
+.inventery li a,
+.inventery li span{
+    display: inline-block;
+    padding:20px;
+    border:1px solid #ababab;
+    min-width: 50px;
+    vertical-align: middle;
+}
+button{
+    width: 130px;
+    background:#ababab;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 12px;
+    border: 1px solid #fff;
+    display: inline-block;
+    vertical-align: middle;
 }
